@@ -127,9 +127,10 @@ in {
       # Use CMD + [ and CMD + ] to move between spaces
       # Note: these must be written to the user domain (no -currentHost); the
       # ByHost/currentHost domain is not where macOS reads symbolic hotkeys.
-      # Hotkey 80 uses ASCII "]" (93) with virtual keycode 30 under Cmd only.
+      # Move left a space is hotkeys 79 (80 is its secondary registration);
+      # move right a space is hotkeys 81/82. "]" = ASCII 93, keycode 30.
       /usr/bin/defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 "<dict><key>enabled</key><true/><key>value</key><dict><key>parameters</key><array><integer>91</integer><integer>33</integer><integer>1048576</integer></array><key>type</key><string>standard</string></dict></dict>"
-      /usr/bin/defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 "<dict><key>enabled</key><true/><key>value</key><dict><key>parameters</key><array><integer>93</integer><integer>30</integer><integer>1048576</integer></array><key>type</key><string>standard</string></dict></dict>"
+      /usr/bin/defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 "<dict><key>enabled</key><true/><key>value</key><dict><key>parameters</key><array><integer>93</integer><integer>30</integer><integer>1048576</integer></array><key>type</key><string>standard</string></dict></dict>"
 
       # Use CMD + k to open Mission Control
       # ASCII "k" (107), virtual keycode 40, Cmd only. Hotkey 36 is Mission Control.
